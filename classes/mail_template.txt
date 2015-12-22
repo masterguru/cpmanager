@@ -1,0 +1,10 @@
+Template email. Edit it.
+
+Vars passed:
+
+Cliend id: {client_id}
+Hosting package: {hosting_package}
+Domain: {domain}
+Cpanel Account: {cpanel_account}
+Password: {cpanel_password}
+
