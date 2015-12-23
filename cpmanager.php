@@ -226,7 +226,7 @@ foreach($fields['descriptions'] as $key=>$value) {
 		case 'mxcheck':
 			$values = array('local','secondary','remote','auto');
 			foreach($values as $opt){
-				$selected = ($opt==$fields['defaults'][$key])?' selected="selected" ':'';
+				$selected = ($opt==$fields['defaults'][$key])? ' selected="selected" ':'';
 				$list_mxchecks .= '<option value="'.$opt.'" '.$selected.'>'.$opt.'</option>';
 			}
 			$data = array(
@@ -271,7 +271,7 @@ foreach($fields['descriptions'] as $key=>$value) {
 					} else {
 						$selected = '';
 						if($done!==1)
-							$selected = ($name_featurelist==$fields['defaults'][$key])?' selected="selected" ':'';
+							$selected = ($name_featurelist==$fields['defaults'][$key])? ' selected="selected" ':'';
 					}
 					
 					$list_cpmods .= '<option value="'.$name_featurelist.'" '.$selected.'>'.$name_featurelist.'</option>';
@@ -295,8 +295,8 @@ foreach($fields['descriptions'] as $key=>$value) {
 			if($_POST['ip'] AND $_POST['ip'] == "y") $required_y=' checked="checked" ';
 			if($_POST['ip'] AND $_POST['ip'] == "n") $required_n=' checked="checked" ';
 			if(!$_POST['ip']) {
-				$required_y = ($fields['defaults'][$key] == 'y')?' checked="checked" ':'';
-				$required_n = ($fields['defaults'][$key] == 'n')?' checked="checked" ':'';
+				$required_y = ($fields['defaults'][$key] == 'y')? ' checked="checked" ':'';
+				$required_n = ($fields['defaults'][$key] == 'n')? ' checked="checked" ':'';
 			}
 			
 			$data = array(
@@ -321,7 +321,7 @@ foreach($fields['descriptions'] as $key=>$value) {
 				} else {
 					$selected = '';
 					if($done!==1)
-						$selected = ($name_featurelist==$fields['defaults'][$key])?' selected="selected" ':'';
+						$selected = ($name_featurelist==$fields['defaults'][$key])? ' selected="selected" ':'';
 				}
 				$list_features .= '<option value="'.$name_featurelist.'" '.$selected.'>'.$name_featurelist.'</option>';
 			}
@@ -342,7 +342,7 @@ foreach($fields['descriptions'] as $key=>$value) {
 			$url = $server."/json-api/listpkgs?api.version=1";
 			$pkgs = json_decode($core->launch_request($header,$url));
 			foreach($pkgs->data->pkg as $pkg) {
-				$selected = (isset($_POST[$key]) AND $_POST[$key]==$pkg->name)?'selected="selected"':'';
+				$selected = (isset($_POST[$key]) AND $_POST[$key]==$pkg->name)? ' selected="selected" ':'';
 				$list_pkgs .= '<option value="'.$pkg->name.'" '.$selected.'>'.$pkg->name.'</option>';
 			}
 			$data = array(
@@ -379,7 +379,7 @@ foreach($fields['descriptions'] as $key=>$value) {
 			switch($fields['types'][$key]) {
 	
 				case 'boolean':
-					$checked =(isset($_POST[$key]))?' checked="checked" ':($fields['defaults'][$key] == 1)?' checked="checked" ':'';
+					$checked =(isset($_POST[$key]))? ' checked="checked" ':($fields['defaults'][$key] == 1)? ' checked="checked" ':'';
 					$data = array(
 						'title' 		=> $fields['values'][$key],
 						'key'			=> $key,
